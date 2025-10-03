@@ -1,0 +1,25 @@
+You have two tables:
+
+staging.vaccination_event
+-------------------------
+nat_event_key     STRING  -- natural unique key from source (e.g., state_code + source_event_id)
+event_date        DATE
+patient_id        STRING
+vaccine_code      STRING
+dose_number       INT
+ingest_batch_id   STRING
+load_ts           TIMESTAMP
+
+prod.vaccination_event
+-------------------------
+nat_event_key     STRING  -- same natural unique key
+event_date        DATE
+patient_id        STRING
+vaccine_code      STRING
+dose_number       INT
+ingest_batch_id   STRING
+load_ts           TIMESTAMP
+
+
+After several days of incremental loads, you notice that the row counts differ between staging.vaccination_event and prod.vaccination_event for the same date ranges.
+How would you debug and fix this issue? Please be specific.
