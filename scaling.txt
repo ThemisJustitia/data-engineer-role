@@ -1,0 +1,10 @@
+A) You need to process 100GB of CSVs daily and load to Snowflake. 
+Write a function that streams rows in fixed-size chunks and applies a simple transform (clean_product_name) before 
+writing out Parquet files locally (simulate) for later upload / COPY INTO. 
+
+- Don’t read the whole file into memory.
+- Make chunk_size configurable.
+- Validate and coerce schema (product_id: str, name: str, qty: int, price: float).
+- Add basic counters and timing for observability.
+
+B) Now, how would you scale this at 1TB/day?
